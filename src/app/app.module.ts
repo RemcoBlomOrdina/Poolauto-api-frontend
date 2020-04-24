@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputLicenseplatenumberComponent } from './input-licenseplatenumber/input-licenseplatenumber.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
+import { InputLicenseplatenumberComponent } from './components/input-licenseplatenumber/input-licenseplatenumber.component';
+import { PoolautoApiService } from "./services/poolauto-api.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import {MatFormFieldModule} from "@angular/material/form-field";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatFormFieldModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [PoolautoApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

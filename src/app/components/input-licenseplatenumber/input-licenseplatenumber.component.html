@@ -1,0 +1,63 @@
+<h1>Ordina poolauto data</h1>
+
+<input type="text" #inputText (keyup)="setUserInput(inputText.value)" placeholder="Kenteken" ngModel pattern="[0-9A-Za-z]"/>
+<button id="sendButton" (click)="getCars()">Opvragen</button>
+
+<div class="container" *ngIf="poolauto != null || undefined">
+  <table id="thetable">
+    <tr>
+      <th>Kenteken</th>
+      <td>
+        {{poolauto.licensePlateNumber}}
+      </td>
+    </tr>
+    <tr>
+      <th>Merk</th>
+      <td>
+        {{poolauto.brand}}
+      </td>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <td>
+        {{poolauto.model}}
+      </td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td>
+        {{poolauto.type}}
+      </td>
+    </tr>
+    <tr>
+      <th>Kleur</th>
+      <td>
+        {{poolauto.color}}
+      </td>
+    </tr>
+    <tr>
+      <th>Uitvoering</th>
+      <td>
+        {{poolauto.version}}
+      </td>
+    </tr>
+    <tr>
+      <th>Motor</th>
+      <td>
+        {{poolauto.engine}}
+      </td>
+    </tr>
+    <tr>
+      <th>Brandstof</th>
+      <td>
+        {{poolauto.fuel}}
+      </td>
+    </tr>
+    <tr>
+      <th>Cataloguswaarde</th>
+      <td>
+        {{poolauto.catalogValue}}
+      </td>
+    </tr>
+  </table>
+</div>
