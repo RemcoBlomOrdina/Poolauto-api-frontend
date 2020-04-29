@@ -1,20 +1,21 @@
-<h1>Ordina poolauto data</h1>
+<h1>{{title}}</h1>
 
-<input type="text" #inputText (keyup)="setUserInput(inputText.value)" placeholder="Kenteken" ngModel pattern="[0-9A-Za-z]"/>
-<button id="sendButton" (click)="getCars()">Opvragen</button>
+<input type="text" #inputText (keyup)="setUserInput(inputText.value)" placeholder={{inputPlaceholder}}/>
+<button (click)="onSubmitButtonClick()">{{submitButtonText}}</button>
+<p id="errorMessage">{{errorMessageText}}</p>
 
-<div class="container" *ngIf="poolauto != null || undefined">
-  <table id="thetable">
+<div *ngIf="poolauto != null || undefined">
+  <table>
     <tr>
       <th>Kenteken</th>
       <td>
-        {{poolauto.licensePlateNumber}}
+        {{poolauto.kenteken}}
       </td>
     </tr>
     <tr>
       <th>Merk</th>
       <td>
-        {{poolauto.brand}}
+        {{poolauto.merk}}
       </td>
     </tr>
     <tr>
@@ -32,32 +33,34 @@
     <tr>
       <th>Kleur</th>
       <td>
-        {{poolauto.color}}
+        {{poolauto.kleur}}
       </td>
     </tr>
     <tr>
       <th>Uitvoering</th>
       <td>
-        {{poolauto.version}}
+        {{poolauto.uitvoering}}
       </td>
     </tr>
     <tr>
       <th>Motor</th>
       <td>
-        {{poolauto.engine}}
+        {{poolauto.motor}}
       </td>
     </tr>
     <tr>
       <th>Brandstof</th>
       <td>
-        {{poolauto.fuel}}
+        {{poolauto.brandstof}}
       </td>
     </tr>
     <tr>
       <th>Cataloguswaarde</th>
       <td>
-        {{poolauto.catalogValue}}
+        {{poolauto.cataloguswaarde}}
       </td>
     </tr>
   </table>
+  <textarea cols="30" rows="10" [(ngModel)]="textAreaValue"></textarea>
+  <button [cdkCopyToClipboard]="textAreaValue">{{copyButtonText}}</button>
 </div>

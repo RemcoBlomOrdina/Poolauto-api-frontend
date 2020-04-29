@@ -9,3 +9,8 @@ th {
 h1 {
   color: orange;
 }
+
+#errorMessage {
+  color: red;
+  font-size: small;
+}

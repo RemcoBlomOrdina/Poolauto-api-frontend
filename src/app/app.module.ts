@@ -7,18 +7,20 @@ import { AppComponent } from './app.component';
 import { InputLicenseplatenumberComponent } from './components/input-licenseplatenumber/input-licenseplatenumber.component';
 import { PoolautoApiService } from "./services/poolauto-api.service";
 import {FormsModule} from "@angular/forms";
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 @NgModule({
   declarations: [
     AppComponent,
     InputLicenseplatenumberComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ClipboardModule,
+    ],
   providers: [PoolautoApiService],
   bootstrap: [AppComponent]
 })
