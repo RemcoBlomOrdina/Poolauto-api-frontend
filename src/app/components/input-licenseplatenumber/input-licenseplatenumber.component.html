@@ -1,66 +1,11 @@
-<h1>{{title}}</h1>
+<img id="ordinaLogo" src="assets/logo.svg" alt="Ordina logo"/>
+<h1 id="title">{{title}}</h1>
 
 <input type="text" #inputText (keyup)="setUserInput(inputText.value)" placeholder={{inputPlaceholder}}/>
 <button (click)="onSubmitButtonClick()">{{submitButtonText}}</button>
 <p id="errorMessage">{{errorMessageText}}</p>
 
 <div *ngIf="poolauto != null || undefined">
-  <table>
-    <tr>
-      <th>Kenteken</th>
-      <td>
-        {{poolauto.kenteken}}
-      </td>
-    </tr>
-    <tr>
-      <th>Merk</th>
-      <td>
-        {{poolauto.merk}}
-      </td>
-    </tr>
-    <tr>
-      <th>Model</th>
-      <td>
-        {{poolauto.model}}
-      </td>
-    </tr>
-    <tr>
-      <th>Type</th>
-      <td>
-        {{poolauto.type}}
-      </td>
-    </tr>
-    <tr>
-      <th>Kleur</th>
-      <td>
-        {{poolauto.kleur}}
-      </td>
-    </tr>
-    <tr>
-      <th>Uitvoering</th>
-      <td>
-        {{poolauto.uitvoering}}
-      </td>
-    </tr>
-    <tr>
-      <th>Motor</th>
-      <td>
-        {{poolauto.motor}}
-      </td>
-    </tr>
-    <tr>
-      <th>Brandstof</th>
-      <td>
-        {{poolauto.brandstof}}
-      </td>
-    </tr>
-    <tr>
-      <th>Cataloguswaarde</th>
-      <td>
-        {{poolauto.cataloguswaarde}}
-      </td>
-    </tr>
-  </table>
   <textarea cols="30" rows="10" [(ngModel)]="textAreaValue"></textarea>
   <button [cdkCopyToClipboard]="textAreaValue">{{copyButtonText}}</button>
 </div>

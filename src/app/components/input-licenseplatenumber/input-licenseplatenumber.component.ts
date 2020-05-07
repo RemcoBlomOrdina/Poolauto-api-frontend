@@ -9,7 +9,7 @@ import {ClipboardModule} from "@angular/cdk/clipboard";
 })
 export class InputLicenseplatenumberComponent implements OnInit {
 
-  public title = 'Ordina poolauto data';
+  public title = 'poolauto data';
   public inputPlaceholder = 'Kenteken';
   public submitButtonText = 'Opvragen';
   public copyButtonText = 'Kopieer naar klembord'
@@ -47,7 +47,7 @@ export class InputLicenseplatenumberComponent implements OnInit {
   }
 
   setUserInput(userInput: string) {
-    this.userInput = userInput;
+    this.userInput = userInput
   }
 
   private isUserInputValid(): boolean {

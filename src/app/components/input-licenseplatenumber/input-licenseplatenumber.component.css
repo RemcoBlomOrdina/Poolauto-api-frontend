@@ -7,10 +7,15 @@ th {
 }
 
 h1 {
-  color: orange;
+  color: darkorange;
 }
 
 #errorMessage {
   color: red;
   font-size: small;
+}
+
+#ordinaLogo {
+  width: 200px;
+  height: 50px;
 }
