@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PoolautoApiService} from "../../services/poolauto-api.service";
-import {ClipboardModule} from "@angular/cdk/clipboard";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'pool-input-licenseplatenumber',
@@ -9,41 +9,40 @@ import {ClipboardModule} from "@angular/cdk/clipboard";
 })
 export class InputLicenseplatenumberComponent implements OnInit {
 
-  public title = 'poolauto data';
+  // public title = 'Poolauto Data';
   public inputPlaceholder = 'Kenteken';
   public submitButtonText = 'Opvragen';
-  public copyButtonText = 'Kopieer naar klembord'
-  public poolauto = null;
+  // public copyButtonText = 'Kopieer naar klembord'
+  // public poolauto = null;
   public userInput = '';
   public errorMessageText = '';
-  public textAreaValue = '';
+  // public textAreaValue = '';
 
   constructor(private poolautoApiService: PoolautoApiService) {}
 
   ngOnInit(): void {}
 
-  getCars(): void {
-    this.poolautoApiService.getCar(this.userInput).subscribe(
-      data => {
-        this.poolauto = data;
-        this.textAreaValue = InputLicenseplatenumberComponent.formatJSONToTable(data);
-      },
-      err => console.error(err),
-      () => console.log('car loaded')
-    );
-  }
+  // getCars(): void {
+  //   this.poolautoApiService.getCar(this.userInput).subscribe(
+  //     data => {
+  //       this.poolauto = data;
+  //       this.errorMessageText = '';
+  //       this.textAreaValue = InputLicenseplatenumberComponent.formatJSONToTable(data);
+  //     },
+  //     err => this.handleError(err)
+  //   );
+  // }
 
   onSubmitButtonClick(): void {
     this.errorMessageText = '';
     if(this.isUserInputValid()) {
-      this.getCars();
+      // this.getCars();
+      // roep ander component aan
     } else {
+      // this.poolauto = null;
+      // this.textAreaValue = '';
       this.errorMessageText = 'Invoer ongeldig. Kenteken bestaat uit 6 letters en cijfers.'
     }
-  }
-
-  onCopyButtonClick(): void {
-    //copy to clipboard
   }
 
   setUserInput(userInput: string) {
@@ -55,13 +54,19 @@ export class InputLicenseplatenumberComponent implements OnInit {
     return (this.userInput.length == 6) && (this.userInput.match(/^[0-9a-zA-Z]+$/) !== null);
   }
 
-  private static formatJSONToTable(json: Object): string {
-    let data = JSON.stringify(json);
-    data = data.replace("{","");
-    data = data.replace("}","");
-    data = data.replace(/"/g,"");
-    data = data.replace(/:/g,": ");
-    data = data.replace(/,/g,"\n");
-    return data;
-  }
+  // private static formatJSONToTable(json: Object): string {
+  //   let data = JSON.stringify(json);
+  //   data = data.replace("{","");
+  //   data = data.replace("}","");
+  //   data = data.replace(/"/g,"");
+  //   data = data.replace(/:/g,": ");
+  //   data = data.replace(/,/g,"\n");
+  //   return data;
+  // }
+
+  // private handleError(error: HttpErrorResponse) {
+  //   this.errorMessageText = error.error.oorzaak;
+  //   this.textAreaValue = '';
+  //   this.poolauto = null;
+  // }
 }

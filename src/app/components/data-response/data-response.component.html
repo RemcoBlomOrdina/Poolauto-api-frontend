@@ -1,0 +1,12 @@
+<div>
+  <p id="errorMessage">{{errorMessageText}}</p>
+</div>
+
+<div id="carDataContainer" *ngIf="poolauto != null || undefined">
+  <div>
+    <textarea cols="30" rows="10" [(ngModel)]="textAreaValue"></textarea>
+  </div>
+  <div>
+    <button id="copyButton" [cdkCopyToClipboard]="textAreaValue">{{copyButtonText}}</button>
+  </div>
+</div>

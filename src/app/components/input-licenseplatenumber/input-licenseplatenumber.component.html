@@ -1,11 +1,21 @@
-<img id="ordinaLogo" src="assets/logo.svg" alt="Ordina logo"/>
-<h1 id="title">{{title}}</h1>
+<!--<div id="outerContainer">-->
+<!--  <img id="ordinaLogo" src="assets/logo.svg" alt="Ordina logo"/>-->
+<!--  <h1 id="title">{{title}}</h1>-->
 
-<input type="text" #inputText (keyup)="setUserInput(inputText.value)" placeholder={{inputPlaceholder}}/>
-<button (click)="onSubmitButtonClick()">{{submitButtonText}}</button>
-<p id="errorMessage">{{errorMessageText}}</p>
+  <div>
+    <input type="text" #inputText (keyup)="setUserInput(inputText.value)" placeholder={{inputPlaceholder}}/>
+    <button (click)="onSubmitButtonClick()">{{submitButtonText}}</button>
+  </div>
+  <div>
+    <p id="errorMessage">{{errorMessageText}}</p>
+  </div>
 
-<div *ngIf="poolauto != null || undefined">
-  <textarea cols="30" rows="10" [(ngModel)]="textAreaValue"></textarea>
-  <button [cdkCopyToClipboard]="textAreaValue">{{copyButtonText}}</button>
-</div>
+<!--  <div id="carDataContainer" *ngIf="poolauto != null || undefined">-->
+<!--    <div>-->
+<!--      <textarea cols="30" rows="10" [(ngModel)]="textAreaValue"></textarea>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <button id="copyButton" [cdkCopyToClipboard]="textAreaValue">{{copyButtonText}}</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

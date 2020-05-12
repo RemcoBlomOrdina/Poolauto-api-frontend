@@ -8,11 +8,15 @@ import { InputLicenseplatenumberComponent } from './components/input-licenseplat
 import { PoolautoApiService } from "./services/poolauto-api.service";
 import {FormsModule} from "@angular/forms";
 import {ClipboardModule} from "@angular/cdk/clipboard";
+import { HeaderComponent } from './components/header/header.component';
+import { DataResponseComponent } from './components/data-response/data-response.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputLicenseplatenumberComponent
+    InputLicenseplatenumberComponent,
+    HeaderComponent,
+    DataResponseComponent
   ],
     imports: [
         BrowserModule,

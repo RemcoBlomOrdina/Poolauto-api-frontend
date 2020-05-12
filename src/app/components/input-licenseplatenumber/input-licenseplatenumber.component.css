@@ -1,21 +1,4 @@
-* {
-  font-family: sans-serif;
-}
-
-th {
-  text-align: left;
-}
-
-h1 {
-  color: darkorange;
-}
-
 #errorMessage {
   color: red;
   font-size: small;
-}
-
-#ordinaLogo {
-  width: 200px;
-  height: 50px;
 }

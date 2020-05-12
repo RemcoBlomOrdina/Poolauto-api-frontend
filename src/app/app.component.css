@@ -1,1 +1,8 @@
+* {
+  font-family: sans-serif;
+  text-align: center;
+}
 
+pool-header {
+  padding: 20px;
+}
