@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'poolauto-api-frontend';
+  poolauto: object;
+
+  onReceivedPoolauto(poolauto: object): void {
+    this.poolauto = poolauto;
+  }
 }

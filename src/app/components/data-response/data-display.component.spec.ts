@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataResponseComponent } from './data-response.component';
+import { DataDisplayComponent } from './data-display.component';
 
 describe('DataResponseComponent', () => {
-  let component: DataResponseComponent;
-  let fixture: ComponentFixture<DataResponseComponent>;
+  let component: DataDisplayComponent;
+  let fixture: ComponentFixture<DataDisplayComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataResponseComponent ]
+      declarations: [ DataDisplayComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataResponseComponent);
+    fixture = TestBed.createComponent(DataDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
